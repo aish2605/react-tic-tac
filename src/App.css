@@ -109,35 +109,3 @@
   font-weight: 700;
   animation: burst 1.6s ease-in-out infinite;
 }
-.emoji {
- animation:emojiFlyToLeft 1.5s ease-out forwards, emojiFlyToRight 1.5s ease-out  infinite;
-position: absolute;
-}
-
-@keyframes emojiFlyToLeft {
- from{
-  top:100%;
-  left:50%;
-  opacity:1;
-
- }
- to{
-  bottom:70%;
-  right:40%;
-  opacity:1;
- }
-}
-@keyframes emojiFlyToRight {
-  from{
-   bottom:100%;
-   right:50%;
-   opacity:1;
- 
-  }
-  to{
-   top:70%;
-   left:40%;
-   opacity:1;
-  }
- }
-

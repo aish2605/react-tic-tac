@@ -1,5 +1,8 @@
-import React, { useRef, useState ,useEffect} from 'react'
+import React, { useRef, useState,useEffect} from 'react'
 import './App.css'
+import JSConfetti from 'js-confetti'
+
+
 
 function App() {
 
@@ -7,6 +10,7 @@ function App() {
   const[player, setPlayer] = useState('O')
   const[game, setGame] = useState(true)
   const[click, setClick] = useState(0)
+  const jsConfetti = new JSConfetti()
 
   const disableClick = (id) =>{
     console.log(id + " will not work now")
@@ -82,43 +86,10 @@ function App() {
     }
   }
 
-  const throwsEmojis = () => {
-    const emojis = ['✨', '🎉', '❤', '🔥',  '💥', '😍'];
-    const corners = [
-      { top: '0', left: '0' },        // top-left
-      { top: '0', right: '0' },       // top-right
-      { bottom: '0', left: '0' },     // bottom-left
-      { bottom: '0', right: '0' },    // bottom-right
-    ];
   
-    for (let i = 0; i < 30; i++) {
-      const emoji = document.createElement('div');
-      emoji.className = 'emoji';
-      emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
-  
-      // Random corner
-      const pos = corners[Math.floor(Math.random() * corners.length)];
-      Object.assign(emoji.style, pos);
-  
-      // Random size & rotation
-      emoji.style.fontSize =` ${Math.random() * 2 + 1}rem`;
-      emoji.style.transform =` rotate(${Math.random() * 360}deg)`;
-
-      emoji.style.position = 'fixed';
-      emoji.style.zIndex = '9999';
-  
-      emoji.style.pointerEvents = 'none';
-  
-      document.body.appendChild(emoji);
-  
-      setTimeout(() => {
-        emoji.remove();
-      }, 1500);
-    }
-  };
   
 
-    
+
   
   
 
@@ -138,14 +109,18 @@ function App() {
     }
     
   }
-  useEffect(() => {
-    if (result && result.includes('winner')) {
-      throwsEmojis();
-    }
-  }, [result]);
+ useEffect(()=>{
+  if(result){
+    jsConfetti.addConfetti({
+      emojis:['🎊','🌺','🥰','💞','🎉','❤️','🌸', '💞', '💫', '💞'],
+      emojiSize:80,
+      ConfettiNumber:50,
+    });
+  }
+ },[result]);
 
 
-
+  
 
 
 
