@@ -112,7 +112,7 @@ function App() {
  useEffect(()=>{
   if(result){
     jsConfetti.addConfetti({
-      emojis:['🎊','🌺','🥰','💞','🎉','❤️','🌸', '💞', '💫', '💞'],
+      emojis:['🎊','🌺','🥰','⭐','🎉','❤️','🌸', '🎗️', '💫', '💞'],
       emojiSize:80,
       ConfettiNumber:50,
     });
