@@ -86,13 +86,7 @@ function App() {
     }
   }
 
-  
-  
-
-
-  
-  
-
+ 
   const clickHandler = (cell)=>{
 
     if(game){
@@ -118,11 +112,6 @@ function App() {
     });
   }
  },[result]);
-
-
-  
-
-
 
 
   return (
